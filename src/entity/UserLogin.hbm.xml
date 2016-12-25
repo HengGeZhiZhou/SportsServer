@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="entity.UserLogin" table="user_login" schema="project_db">
+        <id name="id" column="_id"/>
+        <property name="email" column="_email"/>
+        <property name="password" column="_password"/>
+    </class>
+</hibernate-mapping>

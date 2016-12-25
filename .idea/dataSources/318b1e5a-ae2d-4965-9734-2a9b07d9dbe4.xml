@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="project_db">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="hibernate1"/>
+    <schema id="4" parent="1" name="info"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="library"/>
+    <schema id="7" parent="1" name="logincheck"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="onlinemarket"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="sys"/>
+    <schema id="12" parent="1" name="test"/>
+    <schema id="13" parent="1" name="test1130"/>
+    <table id="14" parent="2" name="fails"/>
+    <table id="15" parent="2" name="follow"/>
+    <table id="16" parent="2" name="follower"/>
+    <table id="17" parent="2" name="friends"/>
+    <table id="18" parent="2" name="state"/>
+    <table id="19" parent="2" name="user_info">
+      <Comment>用户的基本信息</Comment>
+    </table>
+    <table id="20" parent="2" name="user_login">
+      <Comment>用户的基本信息</Comment>
+    </table>
+    <table id="21" parent="2" name="video"/>
+    <column id="22" parent="14" name="_count">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="14" name="_id">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="14" name="_date">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="14" name="_position">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="14" name="_wins">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="27" parent="14" name="history_id">
+      <ColNames>_id</ColNames>
+    </index>
+    <key id="28" parent="14" name="PRIMARY">
+      <ColNames>_count</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="14" name="history_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="30" parent="15" name="_id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="15" name="_follow">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="15" name="follow_id">
+      <ColNames>_id</ColNames>
+    </index>
+    <foreign-key id="33" parent="15" name="follow_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="34" parent="16" name="_id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="16" name="_fans">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="36" parent="16" name="follower_id">
+      <ColNames>_id</ColNames>
+    </index>
+    <foreign-key id="37" parent="16" name="follower_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="38" parent="17" name="_id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="17" name="_friends">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="40" parent="17" name="friends_id">
+      <ColNames>_id</ColNames>
+    </index>
+    <foreign-key id="41" parent="17" name="friends_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="42" parent="18" name="_s_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="18" name="_id">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="18" name="_text">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="45" parent="18" name="_date">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="18" name="_video">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="18" name="_photo">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="18" name="_position">
+      <Position>7</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="18" name="_comments">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="50" parent="18" name="_like">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="51" parent="18" name="state_id">
+      <ColNames>_id</ColNames>
+    </index>
+    <key id="52" parent="18" name="PRIMARY">
+      <ColNames>_s_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="18" name="state_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="19" name="_id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="19" name="_name">
+      <Position>2</Position>
+      <DataType>varchar(18)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="19" name="_portrait">
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="57" parent="19" name="_sex">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="58" parent="19" name="_age">
+      <Position>5</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="59" parent="19" name="_height">
+      <Position>6</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="60" parent="19" name="_weight">
+      <Position>7</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="61" parent="19" name="_profiles">
+      <Position>8</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="62" parent="19" name="_phone">
+      <Position>9</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="63" parent="19" name="_email">
+      <Position>10</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="64" parent="19" name="email">
+      <ColNames>_email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="19" name="name">
+      <ColNames>_name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="66" parent="19" name="phone">
+      <ColNames>_phone</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="67" parent="19" name="PRIMARY">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="68" parent="19" name="name">
+      <ColNames>_name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
+    </key>
+    <key id="69" parent="19" name="phone">
+      <ColNames>_phone</ColNames>
+      <UnderlyingIndexName>phone</UnderlyingIndexName>
+    </key>
+    <key id="70" parent="19" name="email">
+      <ColNames>_email</ColNames>
+      <UnderlyingIndexName>email</UnderlyingIndexName>
+    </key>
+    <foreign-key id="71" parent="19" name="user_info_id">
+      <ColNames>_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>user_login</RefTableName>
+      <RefColNames>_id</RefColNames>
+    </foreign-key>
+    <column id="72" parent="20" name="_id">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="20" name="_email">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="74" parent="20" name="_password">
+      <Position>3</Position>
+      <DataType>varchar(18)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="75" parent="20" name="email">
+      <ColNames>_email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="20" name="PRIMARY">
+      <ColNames>_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="77" parent="20" name="email">
+      <ColNames>_email</ColNames>
+      <UnderlyingIndexName>email</UnderlyingIndexName>
+    </key>
+    <column id="78" parent="21" name="_s_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="21" name="_v_url">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="80" parent="21" name="sid">
+      <ColNames>_s_id</ColNames>
+    </index>
+    <foreign-key id="81" parent="21" name="sid">
+      <ColNames>_s_id</ColNames>
+      <RefSchemaName>project_db</RefSchemaName>
+      <RefTableName>state</RefTableName>
+      <RefColNames>_s_id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="es.cenobit.struts2.json:struts2-json-plugin:2.3.15.3" type="repository">
+    <properties maven-id="es.cenobit.struts2.json:struts2-json-plugin:2.3.15.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/es/cenobit/struts2/json/struts2-json-plugin/2.3.15.3/struts2-json-plugin-2.3.15.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
