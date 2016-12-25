@@ -30,34 +30,37 @@ public class UserAction extends SuperAction {
         UserLogin userLogin = gson.fromJson(getJson().toString(), UserLogin.class);
         UserLoginDaoImpl userLoginDao = new UserLoginDaoImpl();
         if (userLoginDao.userRegister(userLogin)) {
-            returnInfo.setResultCode(1);
-            returnInfo.setResultMessage(registerSuccess);
+            setReturnInfo(1,registerSuccess);
             returnInfo.setData(userLogin);
             this.response.getWriter().write(gson.toJson(returnInfo));
             return "success";
         } else {
-            returnInfo.setResultCode(2);
-            returnInfo.setResultMessage(registerFail);
-            returnInfo.setData(userLogin);sss
+            setReturnInfo(2,registerFail);
+            returnInfo.setData(userLogin);
             this.response.getWriter().write(gson.toJson(returnInfo));
             return "fail";
         }
     }
 
-    public String loginCheck(){
+    public String loginCheck() throws IOException {
         Gson gson=new Gson();
         UserLogin userLogin = gson.fromJson(getJson().toString(), UserLogin.class);
         UserLoginDaoImpl userLoginDao = new UserLoginDaoImpl();
         UserInfo userInfo=userLoginDao.checkLogin(userLogin);
-        if(){
-            returnInfo.setResultCode(1);
-            returnInfo.setResultMessage(loginSuccess);
-            returnInfo.setData();
+        if(userInfo!=null){
+            setReturnInfo(1,loginSuccess);
+            returnInfo.setData(userInfo);
+            this.response.getWriter().write(gson.toJson(returnInfo));
+            return "success";
+        }else {
+            setReturnInfo(2,loginFail);
+            returnInfo.setData(null);
+            this.response.getWriter().write(gson.toJson(returnInfo));
+            return "fail";
         }
-    return null;
     }
 
-    public StringBuffer getJson() {
+    private StringBuffer getJson() {
         this.response.setContentType("text/html;charset=utf-8");
         this.response.setCharacterEncoding("UTF-8");
         StringBuffer json = new StringBuffer();
@@ -73,6 +76,12 @@ public class UserAction extends SuperAction {
             e.printStackTrace();
             return null;
         }
+    }
+
+
+    private void setReturnInfo(int resultCode,String resultMessage){
+        returnInfo.setResultCode(resultCode);
+        returnInfo.setResultMessage(resultMessage);
     }
 
     public ReturnInfo getReturnInfo() {

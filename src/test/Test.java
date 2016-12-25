@@ -23,11 +23,12 @@ public class Test {
 //        UserLoginDaoImpl userDao=new UserLoginDaoImpl();
 //        System.out.println(userDao.userRegister(userLogin));
         UserLogin userLogin=new UserLogin();
+        userLogin=null;
 //        userLogin.setId("1");
-        userLogin.setEmail("124456@qq.com");
-        userLogin.setPassword("123");
-        UserLoginDaoImpl userLoginDao=new UserLoginDaoImpl();
-        System.out.println(userLoginDao.checkLogin(userLogin).toString());
+//        userLogin.setEmail("124456@qq.com");
+//        userLogin.setPassword("123");
+//        UserLoginDaoImpl userLoginDao=new UserLoginDaoImpl();
+//        System.out.println(userLoginDao.checkLogin(userLogin).toString());
 //        UserInfoDaoImpl userInfoDao=new UserInfoDaoImpl();
 //        UserInfo userInfo=userInfoDao.getUserInfo("1612000002");
 //        System.out.println(userInfo.toString());
