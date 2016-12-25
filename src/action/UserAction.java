@@ -38,7 +38,7 @@ public class UserAction extends SuperAction {
         } else {
             returnInfo.setResultCode(2);
             returnInfo.setResultMessage(registerFail);
-            returnInfo.setData(userLogin);
+            returnInfo.setData(userLogin);sss
             this.response.getWriter().write(gson.toJson(returnInfo));
             return "fail";
         }
