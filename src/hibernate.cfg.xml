@@ -11,6 +11,10 @@
         <mapping resource="entity/UserLogin.hbm.xml"/>
         <mapping class="entity.UserInfo"/>
         <mapping resource="entity/UserInfo.hbm.xml"/>
+        <mapping class="entity.History"/>
+        <mapping resource="entity/History.hbm.xml"/>
+        <mapping class="entity.Fails"/>
+        <mapping resource="entity/Fails.hbm.xml"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
